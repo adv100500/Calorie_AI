@@ -31,7 +31,7 @@ I use a **multi-task CNN**:
   2. **Macronutrient regression** (fat, carbs, protein)
 
 Both prediction heads share the same convolutional backbone.  
-Gradients from both tasks are combined (joint loss), so the backbone learns a shared representation capturing **nutrition-relevant visual cues** (texture, density, surface reflectance).  
+Gradients from both tasks are combined (joint loss), so the backbone learns a shared representation capturing **nutrition-relevant visual cues**.
 
 ---
 
