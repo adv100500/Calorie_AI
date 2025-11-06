@@ -32,7 +32,6 @@ I use a **multi-task CNN**:
 
 Both prediction heads share the same convolutional backbone.  
 Gradients from both tasks are combined (joint loss), so the backbone learns a shared representation capturing **nutrition-relevant visual cues** (texture, density, surface reflectance).  
-This is a **hard parameter sharing multi-task setup**.
 
 ---
 
@@ -45,12 +44,10 @@ $$
 \frac{1}{3}\left(\text{MAE}_{\text{fat}} + \text{MAE}_{\text{carb}} + \text{MAE}_{\text{protein}}\right)
 $$
 
-*(equal weighting; MAE chosen for robustness to outliers and noisy nutrient labels)*
-
 - **Hardware:** A100 GPU  
 - **Precision:** Mixed precision training  
 - **Batch size:** 42  
-- **Shuffle buffer:** 1000 samples (break dish-level correlations)  
+- **Shuffle buffer:** 1000 samples
 - **Augmentation:** random horizontal/vertical flips and small-angle rotations 
 - **Optimizer:** RMSProp (as in Nutrition5k) + ReduceLROnPlateau  
 - **Early Stopping:** patience = 22 epochs  
